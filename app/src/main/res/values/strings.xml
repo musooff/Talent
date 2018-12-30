@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Talent</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_more">More</string>
+    <string name="search_hint">What are you looking for?</string>
+    <string name="gig_start_price_format">From %.1f s</string>
+</resources>
