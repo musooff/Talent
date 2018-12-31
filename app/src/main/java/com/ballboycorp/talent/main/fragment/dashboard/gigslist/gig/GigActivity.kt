@@ -10,8 +10,10 @@ import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.PagerAdapter
 import com.ballboycorp.talent.R
+import com.ballboycorp.talent.main.fragment.dashboard.gigslist.gig.model.Plan
+import com.ballboycorp.talent.main.fragment.dashboard.gigslist.gig.util.WrapContentHeightViewPager
 import kotlinx.android.synthetic.main.activity_gig.*
-import kotlinx.android.synthetic.main.gig_vp_item.view.*
+import kotlinx.android.synthetic.main.gig_thumb_vp_item.view.*
 
 /**
  * Created by musooff on 30/12/2018.
@@ -29,36 +31,22 @@ class GigActivity : AppCompatActivity() {
         }
     }
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gig)
 
-        gig_vp.adapter = GigViewPagerAdapter(this)
-        gig_vp_navigator.setupWithViewPager(gig_vp, true)
-    }
+        gig_thumb_vp.adapter = GigThumbViewPagerAdapter(this)
+        gig_thumb_tl.setupWithViewPager(gig_thumb_vp, true)
 
-    inner class GigViewPagerAdapter (context: Context): PagerAdapter(){
+        val plans = ArrayList<Plan>()
+        plans.add(Plan(5, "Some description", listOf("Homework solution", "Explanation of the homework")))
+        plans.add(Plan(10, "Some description", listOf("Homework solution", "Explanation of the homework")))
+        plans.add(Plan(20, "Some description", listOf("Homework solution", "Explanation of the homework")))
 
-        private val layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-
-        override fun isViewFromObject(view: View, `object`: Any): Boolean {
-            return view == `object` as LinearLayout
-        }
-
-        override fun getCount(): Int {
-            return 3
-        }
-
-        override fun instantiateItem(container: ViewGroup, position: Int): Any {
-            val view = layoutInflater.inflate(R.layout.gig_vp_item, container, false)
-            view.gig_vp_thumb.setImageDrawable(resources.getDrawable(R.drawable.ic_gig_default))
-            container.addView(view)
-            return view
-        }
-
-        override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
-            container.removeView(`object` as LinearLayout)
-        }
+        gig_plans_vp.adapter = GigPlanViewPagerAdapter(this, plans)
+        gig_plans_tl.setupWithViewPager(gig_plans_vp, true)
 
     }
 }

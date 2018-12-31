@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         view_pager.adapter = MainViewPagerAdapter(supportFragmentManager)
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
     }
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->

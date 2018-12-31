@@ -14,13 +14,13 @@
             <androidx.viewpager.widget.ViewPager
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/gig_vp">
+                android:id="@+id/gig_thumb_vp">
             </androidx.viewpager.widget.ViewPager>
             <com.google.android.material.tabs.TabLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:id="@+id/gig_vp_navigator"
+                android:id="@+id/gig_thumb_tl"
                 app:tabGravity="center"
                 app:tabIndicatorHeight="0dp"
                 app:tabBackground="@drawable/tab_selector">
@@ -35,12 +35,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
+                android:textStyle="bold"
                 android:textColor="@color/colorDarkBlack"
                 android:text="I do your homework within a day"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -50,18 +52,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
-                        android:text="Ranking 5 start"/>
+                        android:text="Ranking 5 star"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="16sp"
+                        android:textSize="20sp"
                         android:text="by Tyrion Lannester"/>
                 </LinearLayout>
                 <androidx.cardview.widget.CardView
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    app:cardCornerRadius="50dp"
-                    app:cardElevation="5dp"
+                    app:cardCornerRadius="35dp"
+                    app:cardElevation="10dp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true">
                     <RelativeLayout
@@ -69,9 +71,9 @@
                         android:layout_height="match_parent"
                         android:gravity="center">
                         <androidx.cardview.widget.CardView
-                            android:layout_width="65dp"
-                            android:layout_height="65dp"
-                            app:cardCornerRadius="50dp"
+                            android:layout_width="66dp"
+                            android:layout_height="66dp"
+                            app:cardCornerRadius="33dp"
                             app:cardPreventCornerOverlap="false">
                             <ImageView
                                 android:layout_width="match_parent"
@@ -82,8 +84,105 @@
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
             </RelativeLayout>
-        </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lines="4"
+                android:id="@+id/gig_description"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Homework is delivered within a day. I can solve all sorts of the homework. Price can be discussed after seeing the homework. But always charge 5s. Basic plan is just solving homework. Premieum is when I explain how it is working."/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorGrey"/>
+            <com.google.android.material.tabs.TabLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/gig_plans_tl"
+                app:tabTextColor="@color/colorDarkBlack"
+                app:tabIndicatorColor="@color/colorLightGreen"
+                app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+                app:tabIndicatorHeight="2dp">
+            </com.google.android.material.tabs.TabLayout>
+            <com.ballboycorp.talent.main.fragment.dashboard.gigslist.gig.util.WrapContentHeightViewPager
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/gig_plans_vp">
+            </com.ballboycorp.talent.main.fragment.dashboard.gigslist.gig.util.WrapContentHeightViewPager>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reviews"
+                android:textStyle="bold"
+                android:textSize="25sp"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        app:cardCornerRadius="35dp"
+                        app:cardElevation="10dp">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="66dp"
+                                android:layout_height="66dp"
+                                app:cardCornerRadius="33dp"
+                                app:cardPreventCornerOverlap="false">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/ic_user_default"/>
+                            </androidx.cardview.widget.CardView>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Agon Targerian"
+                            android:textColor="@color/colorDarkBlack"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="12 Sep 2018"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Long Review which can contain whatever text user inputs. it should be long enough to be good. i don't know whatever text. which is a review."/>
 
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Read all 79 reviews"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorLightGreen"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>

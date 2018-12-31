@@ -74,7 +74,7 @@ class GigsListActivity : AppCompatActivity() {
             view.gig_start_price.text  = String.format(view.context.getString(R.string.gig_start_price_format), gig.startPrice)
 
             view.setOnClickListener {
-                GigActivity.newIntent(view.context, gig.id)
+                GigActivity.newIntent(view.context, gig.gigId)
             }
         }
     }
